@@ -18,12 +18,12 @@ public class MemberRegisterService {
 		Member member = memberDao.selectByEmail(req.getEmail());
 
 		if (member != null) {
-			throw new DuplicateMemberException("이메일 중복 " + req.getEmail());
+			throw new DuplicateMemberException("email overlap" + req.getEmail());
 		}
 
 		Member newMember = new Member(req.getEmail(), req.getPassword(),
 				req.getName());
 		memberDao.insert(newMember);
-		logger.debug("회원 정보를 저장했습니다.");
+		logger.debug("Membership information has been saved.");
 	}
 }

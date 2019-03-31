@@ -52,11 +52,6 @@ task runMemberMainUsingComponentScan(type: JavaExec) {
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
-task runRegisterMain(type: JavaExec) {
-	main = 'spring.chap04.MemberServiceMain'
-	classpath =  sourceSets.main.runtimeClasspath
-}
-
 task runSpringJdbcMain (type: JavaExec) {
 	main = 'spring.SpringJdbcMain'
 	classpath =  sourceSets.main.runtimeClasspath
