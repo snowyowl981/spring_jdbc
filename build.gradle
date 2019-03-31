@@ -28,12 +28,12 @@ task docs (dependsOn: javadoc, type: Copy) {
 }
 
 task runNormalMain(type: JavaExec) {
-	main = 'spring.chap02.Main'
+	main = 'spring.chap02.NormalMain'
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
 task runSpringMain(type: JavaExec) {
-	main = 'spring.chap02.Main2'
+	main = 'spring.chap02.SpringMain'
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
@@ -49,6 +49,11 @@ task runMemberMainUsingSpring(type: JavaExec) {
 
 task runMemberMainUsingComponentScan(type: JavaExec) {
 	main = 'spring.chap04.MemberMainUsingComponentScan'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
+task runRegisterMain(type: JavaExec) {
+	main = 'spring.chap04.MemberServiceMain'
 	classpath =  sourceSets.main.runtimeClasspath
 }
 

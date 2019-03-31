@@ -1,11 +1,11 @@
 package spring.chap03;
 
 public class Member {
-	String memberId; // 아이디
-	String email; // 이메일
-	String password; // 비밀번호
-	String name; // 이름
-	String registerDate; // 등록일시
+	String memberId;
+	String email;
+	String password;
+	String name;
+	String registerDate;
 
 	/**
 	 * Default Constructor

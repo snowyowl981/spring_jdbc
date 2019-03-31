@@ -1,9 +1,9 @@
 package spring.chap03;
 
 public class RegisterRequest {
-	String email; // 이메일
-	String password; // 비밀번호
-	String name; // 이름
+	String email;
+	String password;
+	String name;
 
 	public String getEmail() {
 		return email;
