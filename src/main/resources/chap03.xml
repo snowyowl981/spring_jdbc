@@ -7,18 +7,19 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="greeter" class="spring.chap02.Greeter" />
+	<bean id="memberDao" class="spring.chap03.MemberDao" />
 
-	<bean id="memberDao" class="spring.example.MemberDao" />
-
-	<bean id="articleService"
-		class="spring.example.ArticleService">
-		<property name="memberDao" ref="memberDao" />
+	<!-- dependency injection by constructor -->
+	<bean id="memberRegisterService"
+		class="spring.chap03.MemberRegisterService">
+		<constructor-arg ref="memberDao" />
 	</bean>
 
-	<bean id="memberService"
-		class="spring.example.MemberService">
-		<property name="memberDao" ref="memberDao" />
+	<!-- dependency injection by setter -->
+	<!-- 
+	<bean id="memberRegisterService"
+		class="spring.chap03.MemberRegisterService">
+		<property name="memberDao" ref="memberDao"/>
 	</bean>
-
+	-->
 </beans>
