@@ -38,7 +38,7 @@ public class MemberService {
 
 	public void insertMember() {
 		Member member = new Member();
-		member.setEmail("dragon9813@gmail.com");
+		member.setEmail("웹프어려워@겁나게1.com");
 		member.setPassword("981350");
 		member.setName("최진우");
 		memberDao.insert(member);
