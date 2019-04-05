@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -8,9 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan
-		base-package="org.jacob.jdbc.spring" />
-
+	<!-- p.186 [리스트 8.4]의 구성을 xml로 -->
+	<!-- db.properties 파일을 읽는다. -->
 	<context:property-placeholder
 		location="classpath:db.properties" />
 
@@ -19,7 +17,19 @@
 		<property name="url" value="${db.url}" />
 	</bean>
 
+	<!-- p.190 [리스트 8.6]. dataSource를 jdbcTemplate에 injection -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- p.190 [리스트 8.6]. jdbcTemplate을 memberDao에 injection -->
+	<bean id="memberDao"
+		class="spring.chap08.MemberDaoImplUsingSpringJdbc">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+	<!-- memberDao를 memberService에 injection -->
+	<bean id="memberService" class="spring.chap08.MemberService">
+		<property name="memberDao" ref="memberDao" />
 	</bean>
 </beans>

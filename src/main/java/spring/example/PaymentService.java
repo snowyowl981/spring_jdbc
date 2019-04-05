@@ -10,6 +10,6 @@ public class PaymentService {
 
 	public void pay() {
 		memberDao.getMember();
-		System.out.println("Áö±ŞÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("íšŒì› ì •ë³´ë¥¼ ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
 	}
 }

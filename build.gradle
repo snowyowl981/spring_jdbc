@@ -22,6 +22,12 @@ dependencies {
 	implementation 'org.apache.logging.log4j:log4j-core:2.+'
 }
 
+task runExampleMain(type: JavaExec) {
+	main = 'spring.example.ExampleMain'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
+
 task docs (dependsOn: javadoc, type: Copy) {
 	from 'build/docs/javadoc'
 	into 'docs'
@@ -52,7 +58,17 @@ task runMemberMainUsingComponentScan(type: JavaExec) {
 	classpath =  sourceSets.main.runtimeClasspath
 }
 
-task runSpringJdbcMain (type: JavaExec) {
-	main = 'spring.SpringJdbcMain'
+task runChap08MemberMain(type: JavaExec) {
+	main = 'spring.chap08.MemberMain'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
+task runChap08MemberMainUsingSpring(type: JavaExec) {
+	main = 'spring.chap08.MemberMainUsingSpring'
+	classpath =  sourceSets.main.runtimeClasspath
+}
+
+task runArticleMainUsingSpring (type: JavaExec) {
+	main = 'spring.ArticleMainUsingSpring'
 	classpath =  sourceSets.main.runtimeClasspath
 }

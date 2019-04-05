@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="memberDao" class="spring.book.example.MemberDao" />
+	<bean id="memberDao" class="spring.example.MemberDao" />
 
 	<bean id="articleService"
 		class="spring.example.ArticleService">
