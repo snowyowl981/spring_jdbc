@@ -1,29 +1,23 @@
 
 package article;
 
-/**
- * Article ë„ë©”ì¸ ì˜¤ë¸Œì íŠ¸.<br>
- * ë°ì´í„°ë² ì´ìŠ¤ì˜ article í…Œì´ë¸”ì— ë§¤í•‘í•œë‹¤.
- * 
- * @author Jacob
- */
 public class Article {
-	// ê¸€ë²ˆí˜¸
+	// ±Û¹øÈ£
 	String articleId;
 
-	// ì œëª©
+	// Á¦¸ñ
 	String title;
 
-	// ë‚´ìš©
+	// ³»¿ë
 	String content;
 
-	// ì‘ì„±ì ì•„ì´ë””
+	// ÀÛ¼ºÀÚ ¾ÆÀÌµğ
 	String userId;
 
-	// ì‘ì„±ì ì´ë¦„
+	// ÀÛ¼ºÀÚ ÀÌ¸§
 	String name;
 
-	// ë“±ë¡ì¼ì‹œ
+	// µî·ÏÀÏ½Ã
 	String cdate;
 
 	/*

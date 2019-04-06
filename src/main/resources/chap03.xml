@@ -9,15 +9,17 @@
 
 	<bean id="memberDao" class="spring.chap03.MemberDao" />
 
+ 	
 	<!-- dependency injection by constructor -->
 	<!-- 
 	<bean id="memberRegisterService"
 		class="spring.chap03.MemberRegisterService">
 		<constructor-arg ref="memberDao" />
 	</bean>
-	-->
+	  -->
+	 
 
-	<!-- dependency injection by setter -->
+	<!-- dependency injection by setter --> 
 	<bean id="memberRegisterService"
 		class="spring.chap03.MemberRegisterService">
 		<property name="memberDao" ref="memberDao"/>

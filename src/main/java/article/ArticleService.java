@@ -3,7 +3,7 @@ package article;
 import java.util.List;
 
 /**
- * articleDaoë¥¼ ì‚¬ìš©í•´ì„œ ê¸€ ëª©ë¡, ì¡°íšŒ, ì¶”ê°€, ìˆ˜ì •, ì‚­ì œë¥¼ í•œë‹¤.
+ * articleDao¸¦ »ç¿ëÇØ¼­ ±Û ¸ñ·Ï, Á¶È¸, Ãß°¡, ¼öÁ¤, »èÁ¦¸¦ ÇÑ´Ù.
  * 
  * @author Jacob
  */
@@ -16,7 +16,7 @@ public class ArticleService {
 	}
 
 	/**
-	 * ê¸€ ëª©ë¡
+	 * ±Û ¸ñ·Ï
 	 */
 	public void listArticles() {
 		List<Article> articles = articleDao.listArticles();
@@ -24,7 +24,7 @@ public class ArticleService {
 	}
 
 	/**
-	 * ê¸€ ì¡°íšŒ
+	 * ±Û Á¶È¸
 	 */
 	public void getArticle() {
 		Article article = articleDao.getArticle("3");
@@ -32,23 +32,22 @@ public class ArticleService {
 	}
 
 	/**
-	 * ê¸€ ë“±ë¡
+	 * ±Û µî·Ï
 	 */
 	public void addArticle() {
 		Article article = new Article();
-		article.setTitle("ì˜í™” 'ì–´ë²¤ì ¸ìŠ¤ : ê°€ë§ì—†ì–´' ì˜ ë§ˆì§€ë§‰ ì˜ˆê³ í¸ì´ ê³µê°œëë‹¤(ë™ì˜ìƒ 1ê°œ)");
-		article.setContent(
-				"ë§ˆë¸” ì˜í™” â€˜ì–´ë²¤ì ¸ìŠ¤: ê°€ë§ì—†ì–´â€™ ê°€ ì˜¤ëŠ” 24ì¼ ì „ ì„¸ê³„ ìµœì´ˆ ë™ì‹œ ê°œë´‰ì„ ì•ë‘ê³  ë‹¨ 60ì´ˆ ë§Œì— ëª¨ë“  ê²ƒì„ ì••ë„í•˜ëŠ” ì „ìœ¨ì˜ íŒŒì´ë„ ì˜ˆê³ í¸ì„ ì „ê²© ê³µê°œí–ˆë‹¤.");
+		article.setTitle("Á¦¸ñ");
+		article.setContent("³»¿ë");
 		article.setUserId("1");
-		article.setName("ìµœì§„ìš°");
+		article.setName("ÃÖÁø¿ì");
 		if (articleDao.addArticle(article) > 0)
-			System.out.println("ê¸€ì„ ì¶”ê°€í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» Ãß°¡Çß½À´Ï´Ù.");
 		else
-			System.out.println("ê¸€ì„ ì¶”ê°€í•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» Ãß°¡ÇÏÁö ¸øÇß½À´Ï´Ù.");
 	}
 
 	/**
-	 * ê¸€ ìˆ˜ì •
+	 * ±Û ¼öÁ¤
 	 */
 	public void updateArticle() {
 		Article article = new Article();
@@ -56,18 +55,18 @@ public class ArticleService {
 		article.setTitle("This is modified title.");
 		article.setContent("This is modified content");
 		if (articleDao.updateArticle(article) > 0)
-			System.out.println("ê¸€ì„ ìˆ˜ì •í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» ¼öÁ¤Çß½À´Ï´Ù.");
 		else
-			System.out.println("ê¸€ì„ ìˆ˜ì •í•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» ¼öÁ¤ÇÏÁö ¸øÇß½À´Ï´Ù.");
 	}
 
 	/**
-	 * ê¸€ ì‚­ì œ
+	 * ±Û »èÁ¦
 	 */
 	public void deleteArticle() {
 		if (articleDao.deleteArticle("8") > 0)
-			System.out.println("ê¸€ì„ ì‚­ì œí–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» »èÁ¦Çß½À´Ï´Ù.");
 		else
-			System.out.println("ê¸€ì„ ì‚­ì œí•˜ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
+			System.out.println("±ÛÀ» »èÁ¦ÇÏÁö ¸øÇß½À´Ï´Ù.");
 	}
 }

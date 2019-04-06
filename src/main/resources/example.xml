@@ -11,13 +11,14 @@
 
 	<bean id="articleService"
 		class="spring.example.ArticleService">
+		<!-- dependency injection using setter -->
 		<property name="memberDao" ref="memberDao" />
 	</bean>
 
-	<!--  dependency injection, DI -->
 	<bean id="paymentService"
 		class="spring.example.PaymentService">
-		<property name="memberDao" ref="memberDao" />
+		<!-- dependency injection using constructor -->
+		<constructor-arg ref="memberDao"/>
 	</bean>
 
 

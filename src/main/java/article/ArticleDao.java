@@ -2,42 +2,36 @@ package article;
 
 import java.util.List;
 
-/**
- * Data Access Object.<br>
- * ë°ì´í„°ë² ì´ìŠ¤ì— ì ‘ì†í•´ì„œ ë°ì´í„°ë¥¼ ì¡°ì‘í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤.
- * 
- * @author Jacob
- */
 public interface ArticleDao {
 
 	/**
-	 * ëª©ë¡
+	 * ¸ñ·Ï
 	 */
 	List<Article> listArticles();
 
 	/**
-	 * ì¡°íšŒ
+	 * Á¶È¸
 	 */
 	Article getArticle(String articleId);
 
 	/**
-	 * ë“±ë¡
+	 * µî·Ï
 	 * 
-	 * @return ì¶”ê°€ëœ í–‰ì˜ ê°¯ìˆ˜
+	 * @return Ãß°¡µÈ ÇàÀÇ °¹¼ö
 	 */
 	int addArticle(Article article);
 
 	/**
-	 * ìˆ˜ì •
+	 * ¼öÁ¤
 	 * 
-	 * @return ìˆ˜ì •ëœ í–‰ì˜ ê°¯ìˆ˜
+	 * @return ¼öÁ¤µÈ ÇàÀÇ °¹¼ö
 	 */
 	int updateArticle(Article article);
 
 	/**
-	 * ì‚­ì œ
+	 * »èÁ¦
 	 * 
-	 * @return ì‚­ì œëœ í–‰ì˜ ê°¯ìˆ˜
+	 * @return »èÁ¦µÈ ÇàÀÇ °¹¼ö
 	 */
 	int deleteArticle(String articleId);
 }

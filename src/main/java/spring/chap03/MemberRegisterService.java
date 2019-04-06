@@ -9,7 +9,7 @@ public class MemberRegisterService {
 
 	static Logger logger = LogManager.getLogger();
 
-	public MemberRegisterService(MemberDao memberDao) {
+	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
 
@@ -17,13 +17,15 @@ public class MemberRegisterService {
 		logger.debug(req);
 		Member member = memberDao.selectByEmail(req.getEmail());
 
+		// 회원이 이미 존재하면 예외 발생
 		if (member != null) {
-			throw new DuplicateMemberException("email overlap" + req.getEmail());
+			throw new DuplicateMemberException("이메일 중복 " + req.getEmail());
 		}
 
+		// 회원정보 저장
 		Member newMember = new Member(req.getEmail(), req.getPassword(),
 				req.getName());
 		memberDao.insert(newMember);
-		logger.debug("Membership information has been saved.");
+		logger.debug("회원 정보를 저장했습니다.");
 	}
 }

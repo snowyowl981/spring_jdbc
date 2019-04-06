@@ -1,20 +1,21 @@
-package spring.chap08;
+package spring.chap08_1;
 
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import spring.chap03.Member;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberService {
 
 	Logger logger = LogManager.getLogger();
 
-	MemberDao memberDao = null;
+	@Autowired
+	MemberDao memberDao;
 
-	public void setMemberDao(MemberDao memberDao) {
-		this.memberDao = memberDao;
-	}
 
 	public void selectAll() {
 		List<Member> members = memberDao.selectAll(0, 100);
@@ -30,7 +31,7 @@ public class MemberService {
 
 	public void insertMember() {
 		Member member = new Member();
-		member.setEmail("snowyowl@naver.com");
+		member.setEmail("owl@naver.com");
 		member.setPassword("o");
 		member.setName("ÃÖÁø¿ì");
 		memberDao.insert(member);
